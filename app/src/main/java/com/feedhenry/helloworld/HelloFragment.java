@@ -44,7 +44,7 @@ public class HelloFragment extends Fragment {
 
         final TextView mResponse = (TextView) view.findViewById(R.id.cloud_response);
         final EditText mName = (EditText) view.findViewById(R.id.name);
-        Button mCloudButton = (Button) view.findViewById(R.id.button);
+        final Button mCloudButton = (Button) view.findViewById(R.id.button);
         mCloudButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
@@ -68,7 +68,7 @@ public class HelloFragment extends Fragment {
                 public void success(FHResponse fhResponse) {
                     Log.d(TAG, "cloudCall - success");
                     button.setEnabled(true);
-                    response.setText(fhResponse.getJson().getString("msg"));
+                    response.setText(fhResponse.getJson().getString("text"));
                 }
 
                 @Override
